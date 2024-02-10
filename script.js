@@ -111,13 +111,15 @@ function addShot() {
         }
     );
 }
-
+var Points = 0;
 function killEnemy(theEnemy) {
     if (enemys[theEnemy].radius > 4) {
         enemys[theEnemy].radius -= 2;
     } else {
         enemys.splice(theEnemy, 1);
     }
+    Points++;
+    window.innterHtml = Points;
 }
 
 function updateShotPosition(myShots) {
