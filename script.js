@@ -1,6 +1,9 @@
 // Circles Attak (Demo)
 
 const canvas = document.querySelector('#canvas');
+const points = document.querySelector('#points');
+const pointsNumber = points.querySelector('span');
+
 const ctx = canvas.getContext('2d');
 
 const middleOfScreenX = canvas.offsetWidth / 2;
@@ -111,15 +114,16 @@ function addShot() {
         }
     );
 }
-var Points = 0;
+
+var countPoints = 0;
 function killEnemy(theEnemy) {
     if (enemys[theEnemy].radius > 4) {
         enemys[theEnemy].radius -= 2;
     } else {
         enemys.splice(theEnemy, 1);
+        countPoints++;
+        pointsNumber.innerHTML = countPoints;
     }
-    Points++;
-    window.innterHtml = Points;
 }
 
 function updateShotPosition(myShots) {

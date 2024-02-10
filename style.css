@@ -8,3 +8,9 @@ body {
     display: block;
     background: #f1f5ff;
 }
+
+#points {
+    display: block;
+    text-align: center;
+    padding: 20px;
+}
